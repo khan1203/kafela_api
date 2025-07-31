@@ -12,11 +12,13 @@ from .views import (
     BookRequestListCreateView,
     BookRequestDetailView,
     BookReviewListCreate,
-    RandomReviewList
+    RandomReviewList,
+    CategoryViewSet
 )
 
 router = DefaultRouter()
 router.register(r'books', BookViewSet)
+router.register(r'categories', CategoryViewSet) 
 
 urlpatterns = [
 

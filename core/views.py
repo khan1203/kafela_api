@@ -1,11 +1,11 @@
 import random
-from .models import User, Book, BookRequest, Review
+from .models import User, Book, BookRequest, Review, Category
 from rest_framework import generics, status, viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from .permissions import IsAdminUser, IsRegularUser
-from .serializers import RegisterSerializer, BookSerializer, BookRequestSerializer, ReviewSerializer
+from .serializers import RegisterSerializer, BookSerializer, BookRequestSerializer, ReviewSerializer, CategorySerializer
 
 # Create your views here.
 
@@ -38,6 +38,16 @@ class BookViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(added_by=self.request.user)
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+    def get_permissions(self):
+        # Allow anyone to read, only admin can create/edit/delete
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        return [IsAdminUser()]
 
 class BookRequestListCreateView(generics.ListCreateAPIView):
     queryset = BookRequest.objects.all()

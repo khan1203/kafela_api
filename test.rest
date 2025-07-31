@@ -110,3 +110,30 @@ GET http://127.0.0.1:8000/api/book_requests/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQwMTczLCJpYXQiOjE3NTM5Mzk4NzMsImp0aSI6ImE3MzFhMmNlYmNhOTQ2MTViN2ExYzBiMDg3M2JlZDZlIiwidXNlcl9pZCI6IjMifQ.RATO7n5rtYph1nAYIX69ZnVaj-l_dbk7-bEQHKs8-6E
 
 ### ------------------------------------------------------
+
+### 🔁 Get book request by ID
+GET http://127.0.0.1:8000/api/book_requests/1/
+Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
+
+### -------------------------------------------------------
+
+### ✍️ Post a review for a book (book_id = 1)
+POST http://127.0.0.1:8000/api/books/1/reviews/
+Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "rating": 9,
+  "comment": "Excellent resource for Django learners!"
+}
+
+### -------------------------------------------------------
+
+### 📖 Get reviews for a specific book
+GET http://127.0.0.1:8000/api/books/1/reviews/
+Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
+
+### -------------------------------------------------------
+
+### 🎲 Get random reviews
+GET http://127.0.0.1:8000/api/random_reviews/

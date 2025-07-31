@@ -23,7 +23,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ['id', 'category', 'description']
 
 class BookSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
