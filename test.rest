@@ -1,0 +1,26 @@
+
+### Register
+
+POST http://localhost:8000/api/register/
+Content-Type: application/json
+
+{
+  "email": "user1@gmail.com",
+  "username": "user1",
+  "password": "user1212",
+  "confirm_password": "user1212",
+  "full_name": "User Ahmed",
+  "institution": "BUBT",
+  "user_type": "FREEMIUM"
+}
+
+### Login
+
+POST http://localhost:8000/api/login/
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "user1212"
+}
+
