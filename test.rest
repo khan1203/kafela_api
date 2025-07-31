@@ -1,6 +1,5 @@
 
-### Register
-
+### 🔐 Register a new user
 POST http://localhost:8000/api/register/
 Content-Type: application/json
 
@@ -14,7 +13,9 @@ Content-Type: application/json
   "user_type": "FREEMIUM"
 }
 
-### Login
+### --------------------------------------------------------------
+
+### 🔐 User Login to get JWT Token
 
 POST http://localhost:8000/api/login/
 Content-Type: application/json
@@ -24,3 +25,88 @@ Content-Type: application/json
     "password": "user1212"
 }
 
+### --------------------------------------------------------------
+
+### 🔐 Admin Login to get JWT Token
+
+POST http://localhost:8000/api/login/
+Content-Type: application/json
+
+{
+    "email": "admin2@gmail.com",
+    "password": "admin1212"
+}
+
+### ---------------------------------------------------------------
+
+### ♻️ Refresh token
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+  "refresh": "PASTE_REFRESH_TOKEN_HERE"
+}
+
+### ----------------------------------------------------------------
+
+### Admin Dashboard
+
+GET http://localhost:8000/api/admin/dashboard/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM3MzU1LCJpYXQiOjE3NTM5MzcwNTUsImp0aSI6ImI3YzYwZGQ3MTFiNjRlOGI5NzQ1OTVjZDEyZDNlZGJjIiwidXNlcl9pZCI6IjIifQ.4KisW2oeZW25a0vCUbkDgbclzPc6LDVVEuaPTty62EM
+
+
+### User Dashboard
+
+GET http://localhost:8000/api/dashboard/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM3NTIzLCJpYXQiOjE3NTM5MzcyMjMsImp0aSI6ImU0YzFjNGVmZmIzODQ1ZjA4MDU1M2ZiMmRlOGM4Y2Q4IiwidXNlcl9pZCI6IjMifQ.vDED19R0uMm9Ob7YzsHqiSS7ROBMUMS1A4sax7xnuPc
+
+### -----------------------------------------------------------------
+
+### 📚 Get all books (no auth required if public)
+
+GET http://localhost:8000/api/books/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5Mjg3LCJpYXQiOjE3NTM5Mzg5ODcsImp0aSI6IjIzNTA1OWZjM2RjMzRlMTE4MWM1NmRjZGFkYjE3MTRkIiwidXNlcl9pZCI6IjMifQ.nNDRrKHt2xY1MLSrU07yqw11MbEK5nXffqaLzhg6kFI
+
+### ------------------------------------------------------------------
+
+### ➕ Add a new book (admin only)
+POST http://127.0.0.1:8000/api/books/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5ODA3LCJpYXQiOjE3NTM5Mzk1MDcsImp0aSI6ImU5NWYxMjQ0MDk2ODRlYTNiNDdmNzlkZjRmYjBjMGM5IiwidXNlcl9pZCI6IjMifQ.BEA7JFLQFLOIHKHALohH2g6DnHUI5MVu2yUdEVNiZ-M
+Content-Type: application/json
+
+{
+  "title": "The Django Journey",
+  "author": "Jane Smith",
+  "description": "Comprehensive Django guide.",
+  "is_available": true,
+  "total_pages": 350,
+  "category_id": 1
+}
+
+### ------------------------------------------------------
+
+### 🔎 Get a single book by ID
+GET http://127.0.0.1:8000/api/books/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5ODA3LCJpYXQiOjE3NTM5Mzk1MDcsImp0aSI6ImU5NWYxMjQ0MDk2ODRlYTNiNDdmNzlkZjRmYjBjMGM5IiwidXNlcl9pZCI6IjMifQ.BEA7JFLQFLOIHKHALohH2g6DnHUI5MVu2yUdEVNiZ-M
+
+### -----------------------------------------------------
+
+### 📥 Create a Book Request (user only)
+POST http://127.0.0.1:8000/api/book_requests/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5ODA3LCJpYXQiOjE3NTM5Mzk1MDcsImp0aSI6ImU5NWYxMjQ0MDk2ODRlYTNiNDdmNzlkZjRmYjBjMGM5IiwidXNlcl9pZCI6IjMifQ.BEA7JFLQFLOIHKHALohH2g6DnHUI5MVu2yUdEVNiZ-M
+Content-Type: application/json
+
+{
+  "book": 1
+}
+
+### -----------------------------------------------------
+
+### 📄 Get all book requests (own for user / all for admin)
+GET http://127.0.0.1:8000/api/book_requests/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQwMTczLCJpYXQiOjE3NTM5Mzk4NzMsImp0aSI6ImE3MzFhMmNlYmNhOTQ2MTViN2ExYzBiMDg3M2JlZDZlIiwidXNlcl9pZCI6IjMifQ.RATO7n5rtYph1nAYIX69ZnVaj-l_dbk7-bEQHKs8-6E
+
+### ------------------------------------------------------
