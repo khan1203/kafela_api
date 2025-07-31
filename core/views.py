@@ -3,7 +3,7 @@ from .models import User, Book, BookRequest, Review, Category
 from rest_framework import generics, status, viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from .permissions import IsAdminUser, IsRegularUser
 from .serializers import RegisterSerializer, BookSerializer, BookRequestSerializer, ReviewSerializer, CategorySerializer
 
@@ -33,8 +33,8 @@ class BookViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.request.user.is_staff:
-            return [IsAdminUser]
-        return [AllowAny]
+            return [IsAdminUser()]
+        return [AllowAny()]
 
     def perform_create(self, serializer):
         serializer.save(added_by=self.request.user)

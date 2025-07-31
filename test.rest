@@ -74,7 +74,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ### ➕ Add a new book (admin only)
 POST http://127.0.0.1:8000/api/books/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5ODA3LCJpYXQiOjE3NTM5Mzk1MDcsImp0aSI6ImU5NWYxMjQ0MDk2ODRlYTNiNDdmNzlkZjRmYjBjMGM5IiwidXNlcl9pZCI6IjMifQ.BEA7JFLQFLOIHKHALohH2g6DnHUI5MVu2yUdEVNiZ-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQxMzcwLCJpYXQiOjE3NTM5NDEwNzAsImp0aSI6IjczNmU3MGZmMGZmODRkNzk5ZTJjYjRlZDBkODM0OWFhIiwidXNlcl9pZCI6IjIifQ.5KsUl-XHqrGuTnYU-kNrmLbU8rPMJUQ4f92QlBkJm-8
 Content-Type: application/json
 
 {
@@ -137,3 +137,20 @@ Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
 
 ### 🎲 Get random reviews
 GET http://127.0.0.1:8000/api/random_reviews/
+
+### --------------------------------------------------------
+
+### 📁 Add new category (Admin Only)
+POST http://127.0.0.1:8000/api/categories/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQxMDI0LCJpYXQiOjE3NTM5NDA3MjQsImp0aSI6ImZlMDY1OTc1NjgyNTQzMDU4NzJjY2Q0M2FkYjFlZDRjIiwidXNlcl9pZCI6IjIifQ.lg_FcTNyr98ChIzPEW57vOu5VuZ1U6w8f7qwuqzKANg
+Content-Type: application/json
+
+{
+  "category": "Tadabbur-e-Quran",
+  "description": "The Description and Understanding of Quran"
+}
+
+### --------------------------------------------------------
+
+### 📁 Get all categories
+GET http://127.0.0.1:8000/api/categories/
