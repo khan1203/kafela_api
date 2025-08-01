@@ -13,7 +13,7 @@ Content-Type: application/json
   "user_type": "FREEMIUM"
 }
 
-### --------------------------------------------------------------
+
 
 ### 🔐 User Login to get JWT Token
 
@@ -25,7 +25,7 @@ Content-Type: application/json
     "password": "user1212"
 }
 
-### --------------------------------------------------------------
+
 
 ### 🔐 Admin Login to get JWT Token
 
@@ -37,7 +37,7 @@ Content-Type: application/json
     "password": "admin1212"
 }
 
-### ---------------------------------------------------------------
+
 
 ### ♻️ Refresh token
 POST http://127.0.0.1:8000/api/token/refresh/
@@ -47,14 +47,14 @@ Content-Type: application/json
   "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NDExMzY5MywiaWF0IjoxNzU0MDI3MjkzLCJqdGkiOiI5ZjE1MjkxOWFjYzA0ZDJiODIwNzg3YzhmZWQxNTc0MiIsInVzZXJfaWQiOiI0In0.iNY5belplRzGF7U56jboSf7sPpk7_p2oPx8aZpf616g"
 }
 
-### ----------------------------------------------------------------
+
 
 ### 📚 Get all books (no auth required if public)
 
 GET http://localhost:8000/api/books/
 Content-Type: application/json
 
-### ------------------------------------------------------------------
+
 
 ### ➕ Add a new book (admin only)
 POST http://127.0.0.1:8000/api/books/
@@ -70,12 +70,13 @@ Content-Type: application/json
   "category_id": 2
 }
 
-### ------------------------------------------------------
+
 
 ### 🔎 Get a single book by ID
 GET http://127.0.0.1:8000/api/books/2/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI2NTcwLCJpYXQiOjE3NTQwMjYyNzAsImp0aSI6ImIwMjU2NjQ4OTNhNzQxZTQ5YjJjM2YzY2U4N2JkZGQ4IiwidXNlcl9pZCI6IjQifQ.oSS3AFdcnNVyKdPTQwpxxL24ApDp45EZj7HI9ARUGPM
-### -----------------------------------------------------
+
+
 
 ### 📥 Create a Book Request (user only)
 POST http://127.0.0.1:8000/api/book_requests/
@@ -86,18 +87,19 @@ Content-Type: application/json
   "book": 2
 }
 
-### -----------------------------------------------------
+
 
 ### 📄 Get all book requests (own for user / all for admin)
 GET http://127.0.0.1:8000/api/book_requests/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI2NTcwLCJpYXQiOjE3NTQwMjYyNzAsImp0aSI6ImIwMjU2NjQ4OTNhNzQxZTQ5YjJjM2YzY2U4N2JkZGQ4IiwidXNlcl9pZCI6IjQifQ.oSS3AFdcnNVyKdPTQwpxxL24ApDp45EZj7HI9ARUGPM
-### ------------------------------------------------------
+
+
 
 ### 🔁 Get book request by ID
 GET http://127.0.0.1:8000/api/book_requests/2/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI2ODgzLCJpYXQiOjE3NTQwMjY1ODMsImp0aSI6IjVhNGI1OTUyYmEyZjQzZWRiZDE5MDcxYjE5Y2VlOGJjIiwidXNlcl9pZCI6IjQifQ._X37toVLbiCUpsw1Sj5317cgMrtk89QhTtnFDkKT7zw
 
-### -------------------------------------------------------
+
 
 ### ✍️ Post a review for a book (book_id = select)
 POST http://127.0.0.1:8000/api/books/2/reviews/
@@ -110,18 +112,18 @@ Content-Type: application/json
 }
 
 
-### -------------------------------------------------------
 
 ### 📖 Get reviews for a specific book
 GET http://127.0.0.1:8000/api/books/2/reviews/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI3OTI3LCJpYXQiOjE3NTQwMjc2MjcsImp0aSI6IjQzMDVkNWFmNzVmNTQ4ZWQ5Mjg4YmY4Y2NmZWM4NTc4IiwidXNlcl9pZCI6IjQifQ.EOxyNM6vALIIGIuZ8m4LmUa0PbwKVDZeH0h4guIx84k
-### -------------------------------------------------------
+
+
 
 ### 🎲 Get random reviews
 GET http://127.0.0.1:8000/api/random_reviews/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI3OTI3LCJpYXQiOjE3NTQwMjc2MjcsImp0aSI6IjQzMDVkNWFmNzVmNTQ4ZWQ5Mjg4YmY4Y2NmZWM4NTc4IiwidXNlcl9pZCI6IjQifQ.EOxyNM6vALIIGIuZ8m4LmUa0PbwKVDZeH0h4guIx84k
 
-### --------------------------------------------------------
+
 
 ### 📁 Add new category (Admin Only)
 POST http://127.0.0.1:8000/api/categories/
@@ -133,19 +135,35 @@ Content-Type: application/json
   "description": "The Description and Understanding of Quran"
 }
 
-### --------------------------------------------------------
+
 
 ### 📁 Get all categories
 GET http://127.0.0.1:8000/api/categories/
 
-### ---------------------------------------------------------
+
 
 ### 👤 User Dashboard
 GET http://127.0.0.1:8000/api/dashboard/
-Authorization: Bearer YOUR_ACCESS_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDQyNzM3LCJpYXQiOjE3NTQwNDI0MzcsImp0aSI6IjBkODc3N2MyZTM3NTRhMGJiMjljZDI4YzdkMWYyNTljIiwidXNlcl9pZCI6IjQifQ.8aa7I0_4H951t1NEyTqXa_0ONEXsI-QqL9_D0o3heps
 
-### --------------------------------------------------------
+
 
 ### 🛠 Admin Dashboard
 GET http://127.0.0.1:8000/api/admin/dashboard/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDQyNjc3LCJpYXQiOjE3NTQwNDIzNzcsImp0aSI6ImRmNTIzNWY2MWE4ODRhNDdhM2M5Zjg0OWU2NTNiMmU3IiwidXNlcl9pZCI6IjIifQ._3UL0_D3bJYPLImv3lI76RBEAaPof9mv48Vn-TjlYEU
+
+
+
+### 🔍 Search books by title/auther/description
+GET http://127.0.0.1:8000/api/books/?search=django
+
+
+
+### 🔍 Filter books by category name (case-insensitive)
+GET http://127.0.0.1:8000/api/books/?category=Ethics
+
+
+
+### 🔍 Filter by category + availability
+GET http://127.0.0.1:8000/api/books/?category=Programming&is_available=true
+
