@@ -1,6 +1,6 @@
 import random
 from .models import User, Book, BookRequest, Review, Category
-from rest_framework import generics, status, viewsets
+from rest_framework import generics, status, viewsets, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -13,23 +13,12 @@ class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
-
-class AdminDashboardView(APIView):
-    permission_classes = [IsAdminUser]
-
-    def get(self, request):
-        return Response({"message": "Welcome Admin!"})
-
-
-class UserDashboardView(APIView):
-    permission_classes = [IsRegularUser]
-
-    def get(self, request):
-        return Response({"message": "Welcome User!"})
     
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title', 'author', 'description']  # what user can search by
 
     def get_permissions(self):
         if self.request.user.is_staff:
@@ -89,3 +78,56 @@ class RandomReviewList(APIView):
         random.shuffle(reviews)
         serializer = ReviewSerializer(reviews[:10], many=True)
         return Response(serializer.data)
+
+class AdminDashboardView(APIView):
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    def get(self, request):
+        return Response({
+            "total_books": Book.objects.count(),
+            "total_users": User.objects.filter(is_staff=False).count(),
+            "total_requests": BookRequest.objects.count(),
+            "total_reviews": Review.objects.count(),
+        })
+
+class UserDashboardView(APIView):
+    permission_classes = [IsAuthenticated, IsRegularUser]
+
+    def get(self, request):
+        user = request.user
+        return Response({
+            "full_name": user.full_name,
+            "total_requested": BookRequest.objects.filter(user=user).count(),
+            "total_reviews": Review.objects.filter(user=user).count(),
+            "total_book_read": user.total_book_read,
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+class AdminDashboardView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get(self, request):
+        return Response({"message": "Welcome Admin!"})
+
+
+class UserDashboardView(APIView):
+    permission_classes = [IsRegularUser]
+
+    def get(self, request):
+        return Response({"message": "Welcome User!"})
+
+"""
