@@ -4,12 +4,12 @@ POST http://localhost:8000/api/register/
 Content-Type: application/json
 
 {
-  "email": "user1@gmail.com",
-  "username": "user1",
+  "email": "user2@gmail.com",
+  "username": "user2",
   "password": "user1212",
   "confirm_password": "user1212",
-  "full_name": "User Ahmed",
-  "institution": "BUBT",
+  "full_name": "User2 Khan",
+  "institution": "UIU",
   "user_type": "FREEMIUM"
 }
 
@@ -21,7 +21,7 @@ POST http://localhost:8000/api/login/
 Content-Type: application/json
 
 {
-    "email": "user1@gmail.com",
+    "email": "user2@gmail.com",
     "password": "user1212"
 }
 
@@ -60,37 +60,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 GET http://localhost:8000/api/dashboard/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM3NTIzLCJpYXQiOjE3NTM5MzcyMjMsImp0aSI6ImU0YzFjNGVmZmIzODQ1ZjA4MDU1M2ZiMmRlOGM4Y2Q4IiwidXNlcl9pZCI6IjMifQ.vDED19R0uMm9Ob7YzsHqiSS7ROBMUMS1A4sax7xnuPc
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI2NTcwLCJpYXQiOjE3NTQwMjYyNzAsImp0aSI6ImIwMjU2NjQ4OTNhNzQxZTQ5YjJjM2YzY2U4N2JkZGQ4IiwidXNlcl9pZCI6IjQifQ.oSS3AFdcnNVyKdPTQwpxxL24ApDp45EZj7HI9ARUGPM
 ### -----------------------------------------------------------------
 
 ### 📚 Get all books (no auth required if public)
 
 GET http://localhost:8000/api/books/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5Mjg3LCJpYXQiOjE3NTM5Mzg5ODcsImp0aSI6IjIzNTA1OWZjM2RjMzRlMTE4MWM1NmRjZGFkYjE3MTRkIiwidXNlcl9pZCI6IjMifQ.nNDRrKHt2xY1MLSrU07yqw11MbEK5nXffqaLzhg6kFI
 
 ### ------------------------------------------------------------------
 
 ### ➕ Add a new book (admin only)
 POST http://127.0.0.1:8000/api/books/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQxMzcwLCJpYXQiOjE3NTM5NDEwNzAsImp0aSI6IjczNmU3MGZmMGZmODRkNzk5ZTJjYjRlZDBkODM0OWFhIiwidXNlcl9pZCI6IjIifQ.5KsUl-XHqrGuTnYU-kNrmLbU8rPMJUQ4f92QlBkJm-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0Njg5LCJpYXQiOjE3NTM5ODQzODksImp0aSI6IjQ3YTM3NDAxMzA2YTQ5NzNiYTdhZDlkNGUzYTIxYzg2IiwidXNlcl9pZCI6IjIifQ.8Uhgq5CHZ2EIMRFXp1xxePdwjrJBZT_P0CFGnRF1ppA
 Content-Type: application/json
 
 {
-  "title": "The Django Journey",
-  "author": "Jane Smith",
-  "description": "Comprehensive Django guide.",
+  "title": "Tasauf o Atto-shuddhi",
+  "author": "Mufti Taqi Usmani",
+  "description": "Treatment of any sick Heart(Qalb)",
   "is_available": true,
-  "total_pages": 350,
-  "category_id": 1
+  "total_pages": 290,
+  "category_id": 2
 }
 
 ### ------------------------------------------------------
 
 ### 🔎 Get a single book by ID
 GET http://127.0.0.1:8000/api/books/1/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTM5ODA3LCJpYXQiOjE3NTM5Mzk1MDcsImp0aSI6ImU5NWYxMjQ0MDk2ODRlYTNiNDdmNzlkZjRmYjBjMGM5IiwidXNlcl9pZCI6IjMifQ.BEA7JFLQFLOIHKHALohH2g6DnHUI5MVu2yUdEVNiZ-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0MDI3LCJpYXQiOjE3NTM5ODM3MjcsImp0aSI6ImQzMzNiNzk5MGVjNzQyYjZiZmFiYjZkOWQ5MzNmOTk2IiwidXNlcl9pZCI6IjIifQ.WtLiU_Zd8VcssQsziKP0PTcv0ZTQ-aBoAa457xfNBns
 
 ### -----------------------------------------------------
 
@@ -107,7 +105,7 @@ Content-Type: application/json
 
 ### 📄 Get all book requests (own for user / all for admin)
 GET http://127.0.0.1:8000/api/book_requests/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTQwMTczLCJpYXQiOjE3NTM5Mzk4NzMsImp0aSI6ImE3MzFhMmNlYmNhOTQ2MTViN2ExYzBiMDg3M2JlZDZlIiwidXNlcl9pZCI6IjMifQ.RATO7n5rtYph1nAYIX69ZnVaj-l_dbk7-bEQHKs8-6E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0Njg5LCJpYXQiOjE3NTM5ODQzODksImp0aSI6IjQ3YTM3NDAxMzA2YTQ5NzNiYTdhZDlkNGUzYTIxYzg2IiwidXNlcl9pZCI6IjIifQ.8Uhgq5CHZ2EIMRFXp1xxePdwjrJBZT_P0CFGnRF1ppA
 
 ### ------------------------------------------------------
 
@@ -119,24 +117,26 @@ Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
 
 ### ✍️ Post a review for a book (book_id = 1)
 POST http://127.0.0.1:8000/api/books/1/reviews/
-Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0MzUyLCJpYXQiOjE3NTM5ODQwNTIsImp0aSI6IjAyMjQ4ZjZlYzYwNzRmMDE4NjVmYzc4N2MzM2Y2MzgzIiwidXNlcl9pZCI6IjIifQ.PX36SXqndWVDwFprCiZU2Dm885sE4A7-c8vlVXddSbA
 Content-Type: application/json
 
 {
-  "rating": 9,
-  "comment": "Excellent resource for Django learners!"
+  "book" : 1,
+  "rating": 2,
+  "comment": "Very informative and an awesome resource to learn Django!! Loved it"
 }
 
 ### -------------------------------------------------------
 
 ### 📖 Get reviews for a specific book
 GET http://127.0.0.1:8000/api/books/1/reviews/
-Authorization: Bearer PASTE_ACCESS_TOKEN_HERE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0MzUyLCJpYXQiOjE3NTM5ODQwNTIsImp0aSI6IjAyMjQ4ZjZlYzYwNzRmMDE4NjVmYzc4N2MzM2Y2MzgzIiwidXNlcl9pZCI6IjIifQ.PX36SXqndWVDwFprCiZU2Dm885sE4A7-c8vlVXddSbA
 
 ### -------------------------------------------------------
 
 ### 🎲 Get random reviews
 GET http://127.0.0.1:8000/api/random_reviews/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0MzUyLCJpYXQiOjE3NTM5ODQwNTIsImp0aSI6IjAyMjQ4ZjZlYzYwNzRmMDE4NjVmYzc4N2MzM2Y2MzgzIiwidXNlcl9pZCI6IjIifQ.PX36SXqndWVDwFprCiZU2Dm885sE4A7-c8vlVXddSbA
 
 ### --------------------------------------------------------
 
