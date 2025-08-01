@@ -1,9 +1,11 @@
 import random
 from .models import User, Book, BookRequest, Review, Category
+from .filters import BookFilter
 from rest_framework import generics, status, viewsets, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from django_filters.rest_framework import DjangoFilterBackend
 from .permissions import IsAdminUser, IsRegularUser
 from .serializers import RegisterSerializer, BookSerializer, BookRequestSerializer, ReviewSerializer, CategorySerializer
 
@@ -17,7 +19,8 @@ class RegisterView(generics.CreateAPIView):
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    filter_backends = [filters.SearchFilter]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_class = BookFilter
     search_fields = ['title', 'author', 'description']  # what user can search by
 
     def get_permissions(self):
