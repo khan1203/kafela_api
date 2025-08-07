@@ -91,8 +91,7 @@ Content-Type: application/json
 
 ### 📄 Get all book requests (own for user / all for admin)
 GET http://127.0.0.1:8000/api/book_requests/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI2NTcwLCJpYXQiOjE3NTQwMjYyNzAsImp0aSI6ImIwMjU2NjQ4OTNhNzQxZTQ5YjJjM2YzY2U4N2JkZGQ4IiwidXNlcl9pZCI6IjQifQ.oSS3AFdcnNVyKdPTQwpxxL24ApDp45EZj7HI9ARUGPM
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NTQ5MzkwLCJpYXQiOjE3NTQ1NDkwOTAsImp0aSI6ImY2ZjQ5N2NjZjg1MTQzMmQ5MzUzNzE3ZGFmYzFkYmFjIiwidXNlcl9pZCI6IjIifQ.8AColz74k2b-i9zCPr05aEURUY9iqe09jAEMm1N0Rpc
 
 
 ### 🔁 Get book request by ID
@@ -121,18 +120,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ### 🎲 Get random reviews
 GET http://127.0.0.1:8000/api/random_reviews/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI3OTI3LCJpYXQiOjE3NTQwMjc2MjcsImp0aSI6IjQzMDVkNWFmNzVmNTQ4ZWQ5Mjg4YmY4Y2NmZWM4NTc4IiwidXNlcl9pZCI6IjQifQ.EOxyNM6vALIIGIuZ8m4LmUa0PbwKVDZeH0h4guIx84k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NTQ5MzkwLCJpYXQiOjE3NTQ1NDkwOTAsImp0aSI6ImY2ZjQ5N2NjZjg1MTQzMmQ5MzUzNzE3ZGFmYzFkYmFjIiwidXNlcl9pZCI6IjIifQ.8AColz74k2b-i9zCPr05aEURUY9iqe09jAEMm1N0Rpc
 
 
 
 ### 📁 Add new category (Admin Only)
 POST http://127.0.0.1:8000/api/categories/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDI3OTI3LCJpYXQiOjE3NTQwMjc2MjcsImp0aSI6IjQzMDVkNWFmNzVmNTQ4ZWQ5Mjg4YmY4Y2NmZWM4NTc4IiwidXNlcl9pZCI6IjQifQ.EOxyNM6vALIIGIuZ8m4LmUa0PbwKVDZeH0h4guIx84k
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NTQ5NzMwLCJpYXQiOjE3NTQ1NDk0MzAsImp0aSI6ImU1MDg2YWEzMzRhMzRjYmQ4ODNiMjIwZTRmNTY0MGIyIiwidXNlcl9pZCI6IjIifQ.1ZpMG9N02bOzLHpDxOqR8Ox1Yq7RfQS1_CL_GI4ZxuM
 
 {
-  "category": "Tadabbur-e-Quran",
-  "description": "The Description and Understanding of Quran"
+  "category": "WorldViews",
+  "description": "Developing real world viewpoints",
 }
 
 

@@ -49,6 +49,7 @@ class BookRequest(models.Model):
         ('PENDING', 'Pending'),
         ('APPROVED', 'Approved'),
         ('REJECTED', 'Rejected'),
+        ('RETURNING', 'Want to Return'),
         ('RETURNED', 'Returned'),
     ]
 

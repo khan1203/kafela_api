@@ -1,0 +1,290 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "1cvlh94trt1eg475r59o09p39cri41bg",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlkYb5yYkp4zRPszDiBbipMKcXeIlALaNzPvZUZclzyuTedxEnM2J3P43Qj5oWUDcsdyq5ZrWeaJ7KbYnTZ7raLPy-7-HWRs-VuHCJFUMIaOfZAhknfRJWEEPxAHFhBPUV3PIAk0UEdIvfMOkvgjmPcH_XQ4mg:1uhLKe:du0KoMRjnKzysVYbE_iCHzzb7CYI36Zobv5tdlzuhbI",
+    "expire_date": "2025-08-14T04:55:56.593Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xmopurtan814jx4uknmalacgjzn193j9",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP_C2ZCFFikevfcNZJcFqRpISnsy_l1JetDrzGRewuO-Zb-3uPqFxUUocfplhOERSxd8x3KrMtSyrQvJnsjDNjlXjs_r0f4NMrbct6OFxMkppRUHUBAcWZ44IbBNo4OkAxvSg0F1xqAHB-C-mtiOk7Ek3h_k1zf1:1ujfwy:nZVo8IvSpoDH9rhHlspwjVZvCq5--h5bSnYPxOduuGU",
+    "expire_date": "2025-08-20T15:21:08.941Z"
+  }
+},
+{
+  "model": "core.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$UWQzdGh9RAwMuKMuHqLZdc$xhCb1ttS3bFWfgleJfGyjRdD0jup57fapOV+txtR6PQ=",
+    "last_login": "2025-08-06T15:21:08.932Z",
+    "is_superuser": true,
+    "username": "admin1212",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-30T06:11:32.761Z",
+    "email": "admin@gmail.com",
+    "contact_number": null,
+    "total_book_read": 0,
+    "joined_at": "2025-07-30T06:11:33.763Z",
+    "user_type": "FREEMIUM",
+    "institution": "Other",
+    "student_id": null,
+    "full_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$xtgTcnfIDRsw7KOSbdPNHh$1KR3OspF4wCBA9oSI+V+FsKyCYMlOOberjAB0sqB0wc=",
+    "last_login": "2025-07-31T04:55:56.588Z",
+    "is_superuser": true,
+    "username": "admin2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-30T06:12:31.123Z",
+    "email": "admin2@gmail.com",
+    "contact_number": null,
+    "total_book_read": 0,
+    "joined_at": "2025-07-30T06:12:32.060Z",
+    "user_type": "FREEMIUM",
+    "institution": "Other",
+    "student_id": null,
+    "full_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$dtPyso5zELRJ3VhrXe5cMX$L4H2e98vi8j/vlFwzYA8YxKWVClw6HKgGHKiLUjaACU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-30T06:18:00.565Z",
+    "email": "user1@gmail.com",
+    "contact_number": null,
+    "total_book_read": 0,
+    "joined_at": "2025-07-30T06:18:01.603Z",
+    "user_type": "FREEMIUM",
+    "institution": "BUBT",
+    "student_id": null,
+    "full_name": "User Ahmed",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$GlRyWhWTHwJzV5212iYEzH$7SYoToCZnUQa/sKsCMWN5zjwoqirF7s6Nw52KJ55Abg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T05:30:42.818Z",
+    "email": "user2@gmail.com",
+    "contact_number": null,
+    "total_book_read": 0,
+    "joined_at": "2025-08-01T05:30:43.864Z",
+    "user_type": "FREEMIUM",
+    "institution": "UIU",
+    "student_id": null,
+    "full_name": "User2 Khan",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.category",
+  "pk": 1,
+  "fields": {
+    "category": "Programming",
+    "description": "All coding-related books"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 2,
+  "fields": {
+    "category": "Ethics",
+    "description": "All Ethical books"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 3,
+  "fields": {
+    "category": "Western Productivity",
+    "description": "All Productivity Related books along western philosophy"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 4,
+  "fields": {
+    "category": "Sirah",
+    "description": "The Biography of Muhammad(SM)"
+  }
+},
+{
+  "model": "core.category",
+  "pk": 5,
+  "fields": {
+    "category": "Tadabbur-e-Quran",
+    "description": "The Description and Understanding of Quran"
+  }
+},
+{
+  "model": "core.book",
+  "pk": 1,
+  "fields": {
+    "title": "The Django Journey",
+    "author": "Jane Smith",
+    "description": "Comprehensive Django guide.",
+    "is_available": true,
+    "added_by": [
+      "admin2@gmail.com"
+    ],
+    "image": "",
+    "total_pages": 350,
+    "category": 1
+  }
+},
+{
+  "model": "core.book",
+  "pk": 2,
+  "fields": {
+    "title": "Tasauf o Atto-shuddhi",
+    "author": "Mufti Taqi Usmani",
+    "description": "Treatment of any sick Heart(Qalb)",
+    "is_available": true,
+    "added_by": [
+      "admin2@gmail.com"
+    ],
+    "image": "",
+    "total_pages": 290,
+    "category": 2
+  }
+},
+{
+  "model": "core.bookrequest",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "user2@gmail.com"
+    ],
+    "book": 1,
+    "request_date": "2025-08-01T05:35:15.616Z",
+    "return_date": null,
+    "status": "PENDING"
+  }
+},
+{
+  "model": "core.bookrequest",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "user2@gmail.com"
+    ],
+    "book": 2,
+    "request_date": "2025-08-01T05:35:28.377Z",
+    "return_date": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "admin2@gmail.com"
+    ],
+    "book": 1,
+    "rating": 9,
+    "comment": "Excellent resource for Django learners!",
+    "created_at": "2025-07-31T17:45:09.106Z",
+    "updated_at": "2025-07-31T17:45:09.106Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "admin2@gmail.com"
+    ],
+    "book": 1,
+    "rating": 2,
+    "comment": "Very informative and an awesome resource to learn Django!! Loved it",
+    "created_at": "2025-07-31T17:49:27.565Z",
+    "updated_at": "2025-07-31T17:49:27.565Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "user2@gmail.com"
+    ],
+    "book": 2,
+    "rating": 9,
+    "comment": "This book just changed my mind, mindset and life",
+    "created_at": "2025-08-01T05:52:49.641Z",
+    "updated_at": "2025-08-01T05:52:49.641Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-08-06T15:21:46.084Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "core",
+      "bookrequest"
+    ],
+    "object_id": "2",
+    "object_repr": "user2 -> Tasauf o Atto-shuddhi (APPROVED)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-08-06T15:22:53.634Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "core",
+      "bookrequest"
+    ],
+    "object_id": "2",
+    "object_repr": "user2 -> Tasauf o Atto-shuddhi (APPROVED)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+}
+]
