@@ -12,18 +12,31 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import dj_database_url
-from decouple import config
+from decouple import config, Csv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Detect if running on Render or not (RENDER should be set in env)
+IS_RENDER = config('RENDER', default=True, cast=bool)
+
+# SECRET_KEY (must be set in .env)
+SECRET_KEY = config('SECRET_KEY')
+
+# DEBUG (default False on Render, True locally, but controlled via env)
+DEBUG = config('DEBUG', default=not IS_RENDER, cast=bool)
+
+# ALLOWED_HOSTS (comma separated string in env)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n&iyrx2ve5b+v23)h_w4l0#x=as!ua#hoxqoejxe!97=e%5@2!'
+# SECRET_KEY = 'django-insecure-n&iyrx2ve5b+v23)h_w4l0#x=as!ua#hoxqoejxe!97=e%5@2!'
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', cast=bool)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -83,13 +96,22 @@ WSGI_APPLICATION = 'kafela_rest_main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASE_URL = 'postgresql://kafela_db_user:BMPFERkxukRDVLlM6taiasA2wTHXIgVP@dpg-d2a5n4er433s73a4e8u0-a/kafela_db'
+# Determine if running on Render
+IS_RENDER = config('RENDER', default=False, cast=bool)
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+if IS_RENDER:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
