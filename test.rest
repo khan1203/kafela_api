@@ -21,7 +21,7 @@ POST http://localhost:8000/api/login/
 Content-Type: application/json
 
 {
-    "email": "user2@gmail.com",
+    "email": "user1@gmail.com",
     "password": "user1212"
 }
 
@@ -33,8 +33,8 @@ POST http://localhost:8000/api/login/
 Content-Type: application/json
 
 {
-    "email": "admin2@gmail.com",
-    "password": "admin1212"
+    "email": "admin@gmail.com",
+    "password": "pass1212"
 }
 
 
@@ -58,13 +58,13 @@ Content-Type: application/json
 
 ### ➕ Add a new book (admin only)
 POST http://127.0.0.1:8000/api/books/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg0Njg5LCJpYXQiOjE3NTM5ODQzODksImp0aSI6IjQ3YTM3NDAxMzA2YTQ5NzNiYTdhZDlkNGUzYTIxYzg2IiwidXNlcl9pZCI6IjIifQ.8Uhgq5CHZ2EIMRFXp1xxePdwjrJBZT_P0CFGnRF1ppA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NjYzMjU0LCJpYXQiOjE3NTQ2NjI5NTQsImp0aSI6IjcxNWEyNTEwYTYyNTRhMzY4YjE3OWRmMDdiNGIzOTViIiwidXNlcl9pZCI6IjEifQ.MkksIzzuqN2Ktjjzp3rC_SKnSKp66y-MYNBtWoLEyo4
 Content-Type: application/json
 
 {
-  "title": "Tasauf o Atto-shuddhi",
-  "author": "Mufti Taqi Usmani",
-  "description": "Treatment of any sick Heart(Qalb)",
+  "title": "Cash Machine",
+  "author": "Koach Kanchon",
+  "description": "Real Journey of Business",
   "is_available": true,
   "total_pages": 290,
   "category_id": 2
@@ -126,11 +126,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ### 📁 Add new category (Admin Only)
 POST http://127.0.0.1:8000/api/categories/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NTQ5NzMwLCJpYXQiOjE3NTQ1NDk0MzAsImp0aSI6ImU1MDg2YWEzMzRhMzRjYmQ4ODNiMjIwZTRmNTY0MGIyIiwidXNlcl9pZCI6IjIifQ.1ZpMG9N02bOzLHpDxOqR8Ox1Yq7RfQS1_CL_GI4ZxuM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NjYzMjU0LCJpYXQiOjE3NTQ2NjI5NTQsImp0aSI6IjcxNWEyNTEwYTYyNTRhMzY4YjE3OWRmMDdiNGIzOTViIiwidXNlcl9pZCI6IjEifQ.MkksIzzuqN2Ktjjzp3rC_SKnSKp66y-MYNBtWoLEyo4
 
 {
-  "category": "WorldViews",
-  "description": "Developing real world viewpoints",
+  "category": "Business",
+  "description": "",
 }
 
 
@@ -142,7 +142,7 @@ GET http://127.0.0.1:8000/api/categories/
 
 ### 👤 User Dashboard
 GET http://127.0.0.1:8000/api/dashboard/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDQyNzM3LCJpYXQiOjE3NTQwNDI0MzcsImp0aSI6IjBkODc3N2MyZTM3NTRhMGJiMjljZDI4YzdkMWYyNTljIiwidXNlcl9pZCI6IjQifQ.8aa7I0_4H951t1NEyTqXa_0ONEXsI-QqL9_D0o3heps
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0NjYzNTY3LCJpYXQiOjE3NTQ2NjMyNjcsImp0aSI6IjY1ZDMyMjRlOWY0YjQ3ZjI5MDNlODkxZTIwNGQ4YWNhIiwidXNlcl9pZCI6IjMifQ.FaEecJgr3cuYibNOGbwv1f4g8iFOCK-xMFSZqF73Jjw
 
 
 
@@ -153,7 +153,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 
 ### 🔍 Search books by title/auther/description
-GET http://127.0.0.1:8000/api/books/?search=django
+GET http://127.0.0.1:8000/api/books/?search=go
 
 
 

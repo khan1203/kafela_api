@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import dj_database_url
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-n&iyrx2ve5b+v23)h_w4l0#x=as!ua#hoxqoejxe!97=e%5@2!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.onrender.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -82,20 +83,13 @@ WSGI_APPLICATION = 'kafela_rest_main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
-if DATABASE_URL:
-    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'kafela_db',
-            'USER': 'postgres',
-            'PASSWORD': '1234',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+DATABASE_URL = 'postgresql://kafela_db_user:BMPFERkxukRDVLlM6taiasA2wTHXIgVP@dpg-d2a5n4er433s73a4e8u0-a/kafela_db'
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 
 # Password validation
