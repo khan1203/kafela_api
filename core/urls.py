@@ -18,18 +18,6 @@ from .views import (
     CategoryViewSet
 )
 
-User = get_user_model()
-
-def create_admin(request):
-    if User.objects.filter(username="admin").exists():
-        return JsonResponse({"message": "Admin already exists"})
-    
-    User.objects.create_superuser(
-        username="admin",
-        email="admin@gmail.com",
-        password="admin1212"
-    )
-    return JsonResponse({"message": "Superuser created"})
 
 router = DefaultRouter()
 router.register(r'books', BookViewSet)
@@ -40,7 +28,6 @@ urlpatterns = [
     path('', include(router.urls)),
 
     # Auth
-    path("create-admin/", create_admin),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', TokenObtainPairView.as_view(), name='login'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
